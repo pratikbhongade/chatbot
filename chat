@@ -1,0 +1,15 @@
+import spacy
+
+# Load the spaCy model
+nlp = spacy.load("en_core_web_sm")
+
+# Process a sample text
+doc = nlp("Hello, this is a test to check if spaCy and the model are installed correctly.")
+
+# Print the tokens and their parts of speech
+for token in doc:
+    print(f"{token.text}: {token.pos_}")
+
+# Print named entities
+for ent in doc.ents:
+    print(f"{ent.text}: {ent.label_}")
